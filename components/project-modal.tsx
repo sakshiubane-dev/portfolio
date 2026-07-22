@@ -83,36 +83,29 @@ export function ProjectModal({
           {project.subtitle} • PUBLISHED: {project.year}
         </p>
 
-        {/* Custom Visual Banner */}
-        <div className="w-full aspect-video bg-stone-900 text-[#eae7df] p-6 mb-8 flex flex-col items-center justify-center relative overflow-hidden border-2 border-stone-950">
-          {project.slug === 'cityscan' && (
-            <div className="text-center">
-              <svg className="w-20 h-20 mx-auto mb-3" fill="none" stroke="#eae7df" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l5.447 2.724A1 1 0 0021 18.782V8.018a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-                <circle cx="12" cy="12" r="3" fill="#eae7df" opacity="0.6" />
-              </svg>
-              <p className="text-xs font-mono font-bold tracking-wider uppercase text-stone-300">YOLOv8 Edge Computer Vision Inference Engine</p>
-            </div>
-          )}
+        {/* Custom Visual Banner (Skip for baatcheet) */}
+        {project.slug !== 'baatcheet' && (
+          <div className="w-full aspect-video bg-stone-900 text-[#eae7df] p-6 mb-8 flex flex-col items-center justify-center relative overflow-hidden border-2 border-stone-950">
+            {project.slug === 'cityscan' && (
+              <div className="text-center">
+                <svg className="w-20 h-20 mx-auto mb-3" fill="none" stroke="#eae7df" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l5.447 2.724A1 1 0 0021 18.782V8.018a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                  <circle cx="12" cy="12" r="3" fill="#eae7df" opacity="0.6" />
+                </svg>
+                <p className="text-xs font-mono font-bold tracking-wider uppercase text-stone-300">YOLOv8 Edge Computer Vision Inference Engine</p>
+              </div>
+            )}
 
-          {project.slug === 'umeed' && (
-            <div className="text-center">
-              <svg className="w-20 h-20 mx-auto mb-3" fill="none" stroke="#eae7df" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.684a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-              </svg>
-              <p className="text-xs font-mono font-bold tracking-wider uppercase text-stone-300">PHP & MySQL Role-Based Administrative Dashboards</p>
-            </div>
-          )}
-
-          {project.slug === 'baatcheet' && (
-            <div className="text-center">
-              <svg className="w-20 h-20 mx-auto mb-3" fill="none" stroke="#eae7df" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-              </svg>
-              <p className="text-xs font-mono font-bold tracking-wider uppercase text-stone-300">Real-Time Bi-Directional Messaging & Chat Systems</p>
-            </div>
-          )}
-        </div>
+            {project.slug === 'umeed' && (
+              <div className="text-center">
+                <svg className="w-20 h-20 mx-auto mb-3" fill="none" stroke="#eae7df" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.684a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+                <p className="text-xs font-mono font-bold tracking-wider uppercase text-stone-300">PHP & MySQL Role-Based Administrative Dashboards</p>
+              </div>
+            )}
+          </div>
+        )}
 
         {/* Overview */}
         <div className="mb-8">
@@ -141,7 +134,22 @@ export function ProjectModal({
           </div>
         )}
 
-        {/* Technologies / Tags */}
+        {/* Live Project Link */}
+        {project.liveUrl && (
+          <div className="mb-8 border-t border-stone-400 pt-6">
+            <h3 className="text-xs font-mono font-bold uppercase tracking-widest text-stone-900 mb-3">
+              OFFICIAL TRANSMISSION CHANNEL
+            </h3>
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 border-2 border-stone-950 bg-stone-950 text-[#eae7df] hover:bg-transparent hover:text-stone-950 transition-all font-mono text-xs font-bold uppercase"
+            >
+              Launch Live Dispatch ↗
+            </a>
+          </div>
+        )}
         <div className="mb-8 border-t border-stone-400 pt-6">
           <h3 className="text-xs font-mono font-bold uppercase tracking-widest text-stone-900 mb-3">
             TECHNICAL TOOLING & DEPENDENCIES

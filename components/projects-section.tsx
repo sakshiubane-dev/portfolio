@@ -18,6 +18,7 @@ export interface ProjectItem {
   tags: string[]
   year: number
   category: string
+  liveUrl?: string
 }
 
 const projects: ProjectItem[] = [
@@ -37,7 +38,8 @@ const projects: ProjectItem[] = [
       'Implemented automated severity assessment algorithms and geotagged report generation for municipal maintenance teams.',
     ],
     tags: ['Flutter', 'YOLOv8', 'Edge AI', 'Offline Scanning', 'Geotagging'],
-    year: 2024,
+    year: 2026,
+    liveUrl: 'https://city-scan-website.vercel.app/',
   },
   {
     id: 2,
@@ -55,7 +57,7 @@ const projects: ProjectItem[] = [
       'Configured PHPMailer integration for automated transactional email alerts, donation receipts, and registration updates.',
     ],
     tags: ['PHP', 'MySQL', 'Role-Based Dashboards', 'TCPDF', 'PHPMailer'],
-    year: 2024,
+    year: 2025,
   },
   {
     id: 3,
@@ -73,7 +75,7 @@ const projects: ProjectItem[] = [
       'Optimized UI micro-interactions and layout transitions for high responsiveness.',
     ],
     tags: ['Real-Time Chat', 'Web & Mobile UI', 'Instant Messaging', 'UI/UX Design'],
-    year: 2024,
+    year: 2025,
   },
 ]
 
