@@ -112,7 +112,7 @@ export function Navbar() {
         </div>
 
         {/* CTA Button */}
-        <a
+        <Link
           href="/Docs/sakshi bane resumee.pdf"
           download="sakshi_bane_resume.pdf"
           target="_blank"
@@ -121,7 +121,7 @@ export function Navbar() {
           data-magnetic
         >
           Download Resume
-        </a>
+        </Link>
 
         {/* Mobile menu toggle */}
         <button
@@ -149,7 +149,7 @@ export function Navbar() {
                 {item.label}
               </Link>
             ))}
-            <a
+            <Link
               href="/Docs/sakshi bane resumee.pdf"
               download="sakshi_bane_resume.pdf"
               target="_blank"
@@ -158,7 +158,7 @@ export function Navbar() {
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Download Resume
-            </a>
+            </Link>
           </div>
         </div>
       )}
