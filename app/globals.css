@@ -1,0 +1,171 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: 'Poppins', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  --color-accent-green: #2d8f5f;
+  --color-accent-coral: #e07a4f;
+  --color-accent-lavender: #8b7ba3;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  color-scheme: light;
+  --background: #eae7df;
+  --foreground: #1c1917;
+  --card: #e0ded6;
+  --card-foreground: #1c1917;
+  --popover: #eae7df;
+  --popover-foreground: #1c1917;
+  --primary: #1c1917;
+  --primary-foreground: #eae7df;
+  --secondary: #ccc9c0;
+  --secondary-foreground: #1c1917;
+  --muted: #dbd9d1;
+  --muted-foreground: #57534e;
+  --accent: #1c1917;
+  --accent-foreground: #eae7df;
+  --destructive: #991b1b;
+  --border: #1c1917;
+  --input: #1c1917;
+  --ring: #44403c;
+  --radius: 0;
+}
+
+.dark {
+  color-scheme: light;
+  --background: #eae7df;
+  --foreground: #1c1917;
+  --card: #e0ded6;
+  --card-foreground: #1c1917;
+  --popover: #eae7df;
+  --popover-foreground: #1c1917;
+  --primary: #1c1917;
+  --primary-foreground: #eae7df;
+  --secondary: #ccc9c0;
+  --secondary-foreground: #1c1917;
+  --muted: #dbd9d1;
+  --muted-foreground: #57534e;
+  --accent: #1c1917;
+  --accent-foreground: #eae7df;
+  --border: #1c1917;
+}
+
+@layer base {
+  * {
+    border-color: #1c1917;
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    background-image: radial-gradient(#1c1917 0.4px, transparent 0.4px);
+    background-size: 24px 24px;
+    background-color: #eae7df;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  a {
+    @apply transition-colors;
+  }
+}
+
+@layer components {
+  .cursor-custom {
+    cursor: none;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .newspaper-border-double {
+    border-style: double;
+    border-width: 4px;
+    border-color: #1c1917;
+  }
+
+  .newspaper-border-t-double {
+    border-top: 4px double #1c1917;
+  }
+
+  .newspaper-border-b-double {
+    border-bottom: 4px double #1c1917;
+  }
+
+  .newspaper-drop-cap::first-letter {
+    font-family: var(--font-serif);
+    float: left;
+    font-size: 3.5rem;
+    line-height: 0.8;
+    font-weight: 700;
+    margin-right: 0.75rem;
+    margin-top: 0.2rem;
+    color: #1c1917;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+  }
+}
