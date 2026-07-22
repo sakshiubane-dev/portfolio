@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import Image from 'next/image'
+import idCardImg from '../public/images/sakshi-idcard.jpeg'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -84,7 +85,7 @@ export function AboutSection() {
                 </div>
                 <div className="w-20 aspect-[3/4] relative overflow-hidden border-2 border-stone-950 bg-stone-900 shrink-0">
                   <Image
-                    src="/images/sakshi-idcard.jpeg"
+                    src={idCardImg}
                     alt="Sakshi Bane ID Card Portrait"
                     fill
                     className="object-cover object-center grayscale contrast-110 sepia-[15%]"

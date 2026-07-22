@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import Image from 'next/image'
+import portraitImg from '../public/images/sakshi-portrait.jpeg'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -139,7 +140,7 @@ export function HeroSection() {
           >
             <div className="w-full h-full relative overflow-hidden border border-stone-700 bg-stone-950">
               <Image
-                src="/images/sakshi-portrait.jpeg"
+                src={portraitImg}
                 alt="Portrait of Sakshi Bane"
                 fill
                 priority
