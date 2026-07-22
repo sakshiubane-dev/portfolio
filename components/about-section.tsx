@@ -84,7 +84,7 @@ export function AboutSection() {
                 </div>
                 <div className="w-20 aspect-[3/4] relative overflow-hidden border-2 border-stone-950 bg-stone-900 shrink-0">
                   <Image
-                    src="/images/sakshi idcard.jpeg"
+                    src="/images/sakshi-idcard.jpeg"
                     alt="Sakshi Bane ID Card Portrait"
                     fill
                     className="object-cover object-center grayscale contrast-110 sepia-[15%]"
